@@ -4,3 +4,9 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
+chunks
+data
+data_archive
+extracted_texts
+faiss_index
+archive
