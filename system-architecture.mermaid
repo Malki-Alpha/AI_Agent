@@ -1,0 +1,27 @@
+flowchart TB
+    subgraph "Document Processing"
+        A[PDF Documents] --> B[Document Loader]
+        B --> C[Text Extraction]
+        C --> D[Text Cleaning]
+        D --> E[Text Chunking]
+        E --> F[Embedding Generation]
+        F --> G[Vector Store - FAISS]
+    end
+    
+    subgraph "User Interface"
+        H[Streamlit Web App] --> I[Document Upload]
+        H --> J[Document Search]
+        H --> K[Chat Interface]
+    end
+    
+    subgraph "RAG System"
+        G --> L[Vector Retrieval]
+        L --> M[Context Processing]
+        M --> N[LLM Generation]
+        N --> O[Citation Formatting]
+    end
+    
+    I --> A
+    J --> L
+    K --> L
+    O --> H
